@@ -1,0 +1,17 @@
+{
+  "frontendFolder": "/home/jgaba/Desktop/MY PROJECTS/00_JGA_VAADIN_Exercises from Vaadin course_JAVA_VAADIN-JAVA-MAVEN/GRID VAADIN24_grid, data tables_BEGINNER/exercises/./frontend",
+  "themeFolder": "themes",
+  "themeResourceFolder": "/home/jgaba/Desktop/MY PROJECTS/00_JGA_VAADIN_Exercises from Vaadin course_JAVA_VAADIN-JAVA-MAVEN/GRID VAADIN24_grid, data tables_BEGINNER/exercises/./frontend/generated/jar-resources",
+  "staticOutput": "/home/jgaba/Desktop/MY PROJECTS/00_JGA_VAADIN_Exercises from Vaadin course_JAVA_VAADIN-JAVA-MAVEN/GRID VAADIN24_grid, data tables_BEGINNER/exercises/target/classes/META-INF/VAADIN/webapp/VAADIN/static",
+  "generatedFolder": "generated",
+  "statsOutput": "/home/jgaba/Desktop/MY PROJECTS/00_JGA_VAADIN_Exercises from Vaadin course_JAVA_VAADIN-JAVA-MAVEN/GRID VAADIN24_grid, data tables_BEGINNER/exercises/target/classes/META-INF/VAADIN/config",
+  "frontendBundleOutput": "/home/jgaba/Desktop/MY PROJECTS/00_JGA_VAADIN_Exercises from Vaadin course_JAVA_VAADIN-JAVA-MAVEN/GRID VAADIN24_grid, data tables_BEGINNER/exercises/target/classes/META-INF/VAADIN/webapp",
+  "devBundleOutput": "/home/jgaba/Desktop/MY PROJECTS/00_JGA_VAADIN_Exercises from Vaadin course_JAVA_VAADIN-JAVA-MAVEN/GRID VAADIN24_grid, data tables_BEGINNER/exercises/src/main/dev-bundle/webapp",
+  "devBundleStatsOutput": "/home/jgaba/Desktop/MY PROJECTS/00_JGA_VAADIN_Exercises from Vaadin course_JAVA_VAADIN-JAVA-MAVEN/GRID VAADIN24_grid, data tables_BEGINNER/exercises/src/main/dev-bundle/config",
+  "jarResourcesFolder": "/home/jgaba/Desktop/MY PROJECTS/00_JGA_VAADIN_Exercises from Vaadin course_JAVA_VAADIN-JAVA-MAVEN/GRID VAADIN24_grid, data tables_BEGINNER/exercises/./frontend/generated/jar-resources",
+  "themeName": "training",
+  "clientServiceWorkerSource": "/home/jgaba/Desktop/MY PROJECTS/00_JGA_VAADIN_Exercises from Vaadin course_JAVA_VAADIN-JAVA-MAVEN/GRID VAADIN24_grid, data tables_BEGINNER/exercises/target/sw.ts",
+  "pwaEnabled": false,
+  "offlineEnabled": false,
+  "offlinePath": "'offline.html'"
+}
