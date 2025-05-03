@@ -26,10 +26,16 @@ public class CreateGrid extends VerticalLayout {
 		final List<Person> persons = service.getAllPersons();
 
 		// TODO create a Grid
-		final Grid<Person> grid = new Grid<>(Person.class);
+		final Grid<Person> grid = new Grid<>();
 
 		add(grid);
+
 		grid.setItems(persons);
+		grid.addColumn(Person::getAge).setHeader("Age");
+		grid.addColumn(Person::getName).setHeader( "Name");
+		grid.addColumn(Person::getEmail).setHeader("Email");
+		grid.addColumn(Person::getBirthday).setHeader("Birthday");
+		
 		// TODO create a DataProvider for the Grid
 		
 	}
