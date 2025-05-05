@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.data.provider.DataProvider;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.RouteAlias;
 import com.vaadin.training.grid.exercises.MainLayout;
@@ -26,10 +27,16 @@ public class CreateGrid extends VerticalLayout {
 		final List<Person> persons = service.getAllPersons();
 
 		// TODO create a Grid
-		final Grid<Person> grid = new Grid<>(Person.class);
+		final Grid<Person> grid = new Grid<>();
 
 		add(grid);
+
 		grid.setItems(persons);
+		grid.addColumn(Person::getAge).setHeader("Age");
+		grid.addColumn(Person::getName).setHeader( "Name");
+		grid.addColumn(Person::getEmail).setHeader("Email");
+		grid.addColumn(Person::getBirthday).setHeader("Birthday");
+		
 		// TODO create a DataProvider for the Grid
 		
 	}
