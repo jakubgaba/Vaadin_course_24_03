@@ -33,7 +33,12 @@ public class FilteringDataProvider extends Composite<VerticalLayout> {
         final Button filter = new Button("Filter");
         final HorizontalLayout filters = new HorizontalLayout(fromField, toField, filter);
         filters.setDefaultVerticalComponentAlignment(FlexComponent.Alignment.END);
-        layout.add(filters);
+
+		filter.addClickListener(e -> {
+			dataProvider.setFilter(Product::getAvailable, available -> filterProduct(available, fromField.getValue(), toField.getValue()));
+		});
+
+		layout.add(filters);
 
         // String data = dataProvider.getItems().stream()
         //         .map(Product::getName)
@@ -47,9 +52,9 @@ public class FilteringDataProvider extends Composite<VerticalLayout> {
 
     }
 
-    private boolean filterProduct(Product product, LocalDate start, LocalDate end) {
+    private boolean filterProduct(LocalDate available, LocalDate start, LocalDate end) {
         // TODO implement filtering logic here.
-		if (product.getAvailable() == null) {
+		if (available == null) {
 			if( start != null || end != null){
 				return false; //null data
 			}
@@ -57,12 +62,12 @@ public class FilteringDataProvider extends Composite<VerticalLayout> {
 		if(start == null && end == null){
 			return true;
 		}else if(start==null){
-			return product.getAvailable().isBefore(end) || product.getAvailable().equals(end);
+			return available.isBefore(end) || available.equals(end);
 		}else if(end==null){
-			return product.getAvailable().isAfter(start) || product.getAvailable().equals(start);
+			return available.isAfter(start) || available.equals(start);
 		}else{
-			boolean atEnds = product.getAvailable().equals(start) || product.equals(end);
-			boolean inBetween = product.getAvailable().isAfter(start) && product.getAvailable().isBefore(end);
+			boolean atEnds = available.equals(start) || available.equals(end);
+			boolean inBetween = available.isAfter(start) && available.isBefore(end);
 
 			return atEnds || inBetween;
 		}
