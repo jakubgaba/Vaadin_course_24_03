@@ -34,6 +34,7 @@ public class FilteringDataProvider extends Composite<VerticalLayout> {
         final HorizontalLayout filters = new HorizontalLayout(fromField, toField, filter);
         filters.setDefaultVerticalComponentAlignment(FlexComponent.Alignment.END);
 
+		//Zavislosti
 		filter.addClickListener(e -> {
 			dataProvider.setFilter(Product::getAvailable, available -> filterProduct(available, fromField.getValue(), toField.getValue()));
 		});
@@ -68,7 +69,6 @@ public class FilteringDataProvider extends Composite<VerticalLayout> {
 		}else{
 			boolean atEnds = available.equals(start) || available.equals(end);
 			boolean inBetween = available.isAfter(start) && available.isBefore(end);
-
 			return atEnds || inBetween;
 		}
     }
