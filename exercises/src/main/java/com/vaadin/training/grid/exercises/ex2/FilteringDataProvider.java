@@ -1,6 +1,7 @@
 package com.vaadin.training.grid.exercises.ex2;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import com.vaadin.flow.component.Composite;
 import com.vaadin.flow.component.button.Button;
@@ -42,6 +43,7 @@ public class FilteringDataProvider extends Composite<VerticalLayout> {
         // TODO create and populate Grid
         Grid<Product> grid = new Grid<>(Product.class);
         grid.setColumns("name", "price", "available");
+		grid.setItems(dataProvider.getItems().stream().filter(filtering -> filterProduct(filtering, fromField, toField)).map(Product::getAvailable).distinct().sorted());
         layout.add(grid);
 
     }
