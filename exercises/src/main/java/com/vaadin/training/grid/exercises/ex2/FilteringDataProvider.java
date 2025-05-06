@@ -1,7 +1,6 @@
 package com.vaadin.training.grid.exercises.ex2;
 
 import java.time.LocalDate;
-import java.util.List;
 
 import com.vaadin.flow.component.Composite;
 import com.vaadin.flow.component.button.Button;
@@ -43,15 +42,30 @@ public class FilteringDataProvider extends Composite<VerticalLayout> {
         // TODO create and populate Grid
         Grid<Product> grid = new Grid<>(Product.class);
         grid.setColumns("name", "price", "available");
-		grid.setItems(dataProvider.getItems().stream().filter(filtering -> filterProduct(filtering, fromField, toField)).map(Product::getAvailable).distinct().sorted());
+		grid.setItems(dataProvider);
         layout.add(grid);
 
     }
 
     private boolean filterProduct(Product product, LocalDate start, LocalDate end) {
-
         // TODO implement filtering logic here.
-        return false;
+		if (product.getAvailable() == null) {
+			if( start != null || end != null){
+				return false; //null data
+			}
+		}
+		if(start == null && end == null){
+			return true;
+		}else if(start==null){
+			return product.getAvailable().isBefore(end) || product.getAvailable().equals(end);
+		}else if(end==null){
+			return product.getAvailable().isAfter(start) || product.getAvailable().equals(start);
+		}else{
+			boolean atEnds = product.getAvailable().equals(start) || product.equals(end);
+			boolean inBetween = product.getAvailable().isAfter(start) && product.getAvailable().isBefore(end);
+
+			return atEnds || inBetween;
+		}
     }
 
 }
